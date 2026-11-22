@@ -4,8 +4,11 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "start": "nodemon ./src/server.js",
-    "lint": "eslint ./src"
+    "start:prod": "NODE_ENV=production node src/server.js",
+    "start:dev": "nodemon src/server.js",
+    "migrate": "node-pg-migrate",
+    "lint": "eslint ./src",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
@@ -20,7 +23,12 @@
   },
   "dependencies": {
     "cors": "^2.8.6",
+    "dotenv": "^18.0.10",
     "express": "^5.3.0",
-    "nanoid": "^5.1.16"
+    "joi": "^18.3.2",
+    "nanoid": "^5.1.16",
+    "newman": "^6.2.3",
+    "node-pg-migrate": "^9.0.0",
+    "pg": "^8.23.1"
   }
 }
